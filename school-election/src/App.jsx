@@ -73,6 +73,55 @@ function App() {
               </p>
             </div>
           </section>
+          <section className="section section--values" data-animate-section>
+            <div className="values">
+              <h2 className="values__title" data-animate>
+                What I’ll Focus On
+              </h2>
+              <p className="values__subtitle" data-animate>
+                Clear priorities to make school life fairer, louder, and more
+                creative.
+              </p>
+              <div className="values__grid">
+                <article className="values__card" data-animate>
+                  <span className="values__icon" aria-hidden="true">
+                    🧭
+                  </span>
+                  <h3 className="values__label">Fair exams</h3>
+                  <p className="values__text">
+                    Transparent dates, helpful reminders, and calmer prep time.
+                  </p>
+                </article>
+                <article className="values__card" data-animate>
+                  <span className="values__icon" aria-hidden="true">
+                    🎤
+                  </span>
+                  <h3 className="values__label">Student voice</h3>
+                  <p className="values__text">
+                    Regular feedback loops so your ideas reach teachers fast.
+                  </p>
+                </article>
+                <article className="values__card" data-animate>
+                  <span className="values__icon" aria-hidden="true">
+                    🎨
+                  </span>
+                  <h3 className="values__label">Activities &amp; creativity</h3>
+                  <p className="values__text">
+                    More chances to showcase clubs, talent, and new events.
+                  </p>
+                </article>
+                <article className="values__card" data-animate>
+                  <span className="values__icon" aria-hidden="true">
+                    📚
+                  </span>
+                  <h3 className="values__label">Academic support</h3>
+                  <p className="values__text">
+                    Peer help, study spaces, and extra clarity before quizzes.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </div>

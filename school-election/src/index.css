@@ -166,6 +166,86 @@ body {
   max-width: 48ch;
 }
 
+.section--values {
+  padding-block: clamp(56px, 12vw, 120px);
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 4vw, 32px);
+  padding-inline: clamp(16px, 4vw, 36px);
+}
+
+.values__title {
+  margin: 0;
+  font-size: clamp(1.6rem, 4.8vw, 2.4rem);
+}
+
+.values__subtitle {
+  margin: 0;
+  max-width: 52ch;
+  color: #52606d;
+  font-size: clamp(1rem, 3.4vw, 1.15rem);
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(16px, 4vw, 24px);
+}
+
+.values__card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: clamp(18px, 4.2vw, 28px);
+  box-shadow:
+    0 16px 36px rgba(31, 41, 51, 0.08),
+    inset 0 0 0 1px rgba(82, 96, 109, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.values__card:hover,
+.values__card:focus-within {
+  transform: translateY(-6px);
+  box-shadow:
+    0 22px 44px rgba(31, 41, 51, 0.12),
+    inset 0 0 0 1px rgba(74, 85, 104, 0.14);
+  border-color: rgba(97, 112, 134, 0.2);
+}
+
+.values__card:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+.values__icon {
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  background: #eef1f5;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.values__label {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.values__text {
+  margin: 0;
+  color: #3d4b59;
+  line-height: 1.6;
+}
+
 @keyframes heroFadeUp {
   from {
     opacity: 0;
@@ -203,6 +283,10 @@ body {
   }
 
   .story {
+    padding-inline: 0;
+  }
+
+  .values {
     padding-inline: 0;
   }
 }
