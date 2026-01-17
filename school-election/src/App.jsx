@@ -1,6 +1,19 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [selectedDecision, setSelectedDecision] = useState('')
+
+  const decisionMessages = {
+    'fair exams':
+      'Fair exams it is! We’ll keep dates crystal clear and prep time calm.',
+    'more activities':
+      'More activities? Yes please! Think clubs, talent days, and fun showcases.',
+    'student voice':
+      'Student voice all the way! Your ideas will reach teachers fast.',
+  }
+
+  const message = selectedDecision ? decisionMessages[selectedDecision] : ''
+
   useEffect(() => {
     const elements = document.querySelectorAll('[data-animate]')
 
@@ -119,6 +132,45 @@ function App() {
                     Peer help, study spaces, and extra clarity before quizzes.
                   </p>
                 </article>
+              </div>
+            </div>
+          </section>
+          <section className="section section--game" data-animate-section>
+            <div className="decision">
+              <div className="decision__header">
+                <p className="decision__eyebrow" data-animate>
+                  One Decision
+                </p>
+                <h2 className="decision__title" data-animate>
+                  If you had one decision to change the school, what would it be?
+                </h2>
+              </div>
+              <div className="decision__choices" role="group" aria-label="One decision game">
+                {Object.keys(decisionMessages).map((option) => (
+                  <button
+                    key={option}
+                    className="decision__button"
+                    type="button"
+                    onClick={() => setSelectedDecision(option)}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+              <div className="decision__message" aria-live="polite" aria-atomic="true">
+                {message && (
+                  <p
+                    key={selectedDecision}
+                    className="decision__message-text decision__message-text--visible"
+                  >
+                    {message}
+                  </p>
+                )}
+                {!message && (
+                  <p className="decision__message-text">
+                    Tap a choice to see a friendly response.
+                  </p>
+                )}
               </div>
             </div>
           </section>
