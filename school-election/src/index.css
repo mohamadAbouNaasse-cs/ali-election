@@ -56,8 +56,75 @@ body {
   backdrop-filter: blur(6px);
 }
 
+.section--hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero {
+  width: min(100%, 520px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 4vw, 28px);
+}
+
+.hero__logo {
+  width: clamp(96px, 22vw, 148px);
+  height: clamp(96px, 22vw, 148px);
+  object-fit: contain;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: heroFadeUp 0.8s ease-out both;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #52606d;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.1;
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-size: clamp(1rem, 3.8vw, 1.35rem);
+  color: #52606d;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (min-width: 900px) {
   .section {
     padding-block: clamp(72px, 8vw, 160px);
+  }
+}
+
+@media (max-width: 600px) {
+  .section--hero {
+    min-height: 100svh;
   }
 }
