@@ -17,6 +17,11 @@ function App() {
           </div>
         </header>
         <main className="main">
+          <section className="section section--photo" data-animate-section>
+            <div className="photo__frame">
+              <img className="photo__image" src="/ali.jpg" alt="Ali portrait" />
+            </div>
+          </section>
           <section className="section section--intro" data-animate-section />
           <section className="section section--features" data-animate-section />
           <section className="section section--details" data-animate-section />
