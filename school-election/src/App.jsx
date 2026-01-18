@@ -221,14 +221,8 @@ function App() {
                   I’d be grateful for your support.
                 </p>
                 <div className="cta__actions" data-animate>
-                  <button
-                    className="cta__button cta__button--primary"
-                    type="button"
-                  >
-                    Vote with confidence
-                  </button>
                   <a
-                    className="cta__button cta__button--ghost"
+                    className="cta__button"
                     href="https://wa.me/96181268506"
                     target="_blank"
                     rel="noreferrer"
