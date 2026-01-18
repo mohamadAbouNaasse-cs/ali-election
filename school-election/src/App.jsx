@@ -1,18 +1,31 @@
 import { useEffect, useState } from 'react'
 
+const decisionOptions = [
+  {
+    id: 'fair exams',
+    label: 'Fair exams',
+    message: 'Fair exams it is! Dates stay clear, prep stays calm, stress stays low.',
+  },
+  {
+    id: 'more activities',
+    label: 'More activities',
+    message: 'More activities? Say less. Clubs, showcases, and student-led events.',
+  },
+  {
+    id: 'student ideas',
+    label: 'Student ideas',
+    message: 'Student ideas on top. Quick feedback loops and real follow-through.',
+  },
+]
+
 function App() {
   const [selectedDecision, setSelectedDecision] = useState('')
 
-  const decisionMessages = {
-    'fair exams':
-      'Fair exams it is! We’ll keep dates crystal clear and prep time calm.',
-    'more activities':
-      'More activities? Yes please! Think clubs, talent days, and fun showcases.',
-    'student voice':
-      'Student voice all the way! Your ideas will reach teachers fast.',
-  }
+  const selectedOption = decisionOptions.find(
+    (option) => option.id === selectedDecision,
+  )
 
-  const message = selectedDecision ? decisionMessages[selectedDecision] : ''
+  const message = selectedOption?.message ?? ''
 
   useEffect(() => {
     const elements = document.querySelectorAll('[data-animate]')
@@ -53,210 +66,190 @@ function App() {
                 alt="Hekma school logo"
               />
             </div>
-            <div className="hero__content">
+            <div className="hero__content" data-animate>
               <p className="hero__headline">
-                A calm, respectful, and energetic voice for a better school year.
+                A friendly, focused leader ready to make this year feel lighter
+                and brighter.
               </p>
               <p className="hero__subtitle">
-                I’m here to listen, act, and keep our school community strong.
+                I listen first, move fast, and keep our community strong.
               </p>
             </div>
           </div>
         </header>
         <main className="main">
-          <section className="section section--photo" data-animate-section>
-            <div className="photo__frame">
-              <img className="photo__image" src="/ali.jpg" alt="Ali portrait" />
-            </div>
-          </section>
-          <section className="section section--intro" data-animate-section>
+          <section className="section section--story" data-animate-section>
             <div className="story">
-              <h2 className="story__title" data-animate>
-                Why I’m Running
-              </h2>
-              <p className="story__paragraph" data-animate>
-                I’m running because I want school to feel more fun and more fair
-                for everyone. Little things like clearer announcements and
-                better activity days can make a big difference.
-              </p>
-              <p className="story__paragraph" data-animate>
-                I’m not here to promise huge stuff. I’m here to listen, share
-                your ideas, and make sure student voices actually reach the
-                teachers and administration.
-              </p>
-              <p className="story__paragraph" data-animate>
-                I promise to fight (as always) for your rights, respect your
-                needs, and keep communication honest and clear.
-              </p>
-              <h2 className="story__title" data-animate>
-                One of You
-              </h2>
-              <p className="story__paragraph" data-animate>
-                I’m a student first, just like you. I get the stress before
-                tests, the early mornings, and the feeling when plans change at
-                the last minute.
-              </p>
-              <p className="story__paragraph" data-animate>
-                If you choose me, you’re choosing someone who will show up,
-                speak up, and keep it real. Let’s make this year feel like ours.
-              </p>
+              <div className="story__content" data-animate>
+                <p className="story__eyebrow">Why I’m running</p>
+                <h2 className="story__title">I’m one of you — and I’m all in.</h2>
+                <p className="story__paragraph">
+                  I know the early mornings, the exam pressure, and the last-minute
+                  schedule shifts. I want school to feel fair, organized, and more
+                  fun for everyone.
+                </p>
+                <p className="story__paragraph">
+                  I’m here to listen, share what you care about, and follow through
+                  on the small changes that make a big difference.
+                </p>
+              </div>
+              <div className="story__media" data-animate>
+                <div className="story__image-frame">
+                  <img
+                    className="story__image"
+                    src="/ali.jpg"
+                    alt="Ali portrait"
+                  />
+                </div>
+              </div>
             </div>
           </section>
+
           <section className="section section--values" data-animate-section>
             <div className="values">
-              <h2 className="values__title" data-animate>
-                What I’ll Focus On
-              </h2>
-              <p className="values__subtitle" data-animate>
-                Clear priorities to make school life fairer, louder, and more
-                creative.
-              </p>
+              <div className="values__header" data-animate>
+                <p className="values__eyebrow">Focus areas</p>
+                <h2 className="values__title">What I’ll focus on first</h2>
+                <p className="values__subtitle">
+                  Clear priorities to keep school life balanced, energetic, and
+                  student-centered.
+                </p>
+              </div>
               <div className="values__grid">
                 <article className="values__card" data-animate>
                   <span className="values__icon" aria-hidden="true">
                     🧭
                   </span>
                   <h3 className="values__label">Fair exams</h3>
-                  <p className="values__text">
-                    Transparent dates, helpful reminders, and calmer prep time.
-                  </p>
+                  <p className="values__text">Clear dates. Calm prep.</p>
                 </article>
                 <article className="values__card" data-animate>
                   <span className="values__icon" aria-hidden="true">
                     🎤
                   </span>
-                  <h3 className="values__label">Student voice</h3>
-                  <p className="values__text">
-                    Regular feedback loops so your ideas reach teachers fast.
-                  </p>
+                  <h3 className="values__label">Real feedback</h3>
+                  <p className="values__text">Your ideas, shared fast.</p>
                 </article>
                 <article className="values__card" data-animate>
                   <span className="values__icon" aria-hidden="true">
                     🎨
                   </span>
-                  <h3 className="values__label">Activities &amp; creativity</h3>
-                  <p className="values__text">
-                    More chances to showcase clubs, talent, and new events.
-                  </p>
+                  <h3 className="values__label">Creative energy</h3>
+                  <p className="values__text">Clubs, talent, and new events.</p>
                 </article>
                 <article className="values__card" data-animate>
                   <span className="values__icon" aria-hidden="true">
                     🏆
                   </span>
-                  <h3 className="values__label">Sports &amp; energy</h3>
-                  <p className="values__text">
-                    More games, tournaments, and fun school sports events.
-                  </p>
+                  <h3 className="values__label">School spirit</h3>
+                  <p className="values__text">More games. More teamwork.</p>
                 </article>
                 <article className="values__card" data-animate>
                   <span className="values__icon" aria-hidden="true">
                     🤝
                   </span>
-                  <h3 className="values__label">Respect &amp; support</h3>
-                  <p className="values__text">
-                    A culture that respects needs and keeps every student heard.
-                  </p>
+                  <h3 className="values__label">Respect always</h3>
+                  <p className="values__text">Support that feels real.</p>
                 </article>
               </div>
             </div>
           </section>
+
           <section className="section section--game" data-animate-section>
             <div className="decision">
-              <div className="decision__header">
-                <p className="decision__eyebrow" data-animate>
-                  One Decision
-                </p>
-                <h2 className="decision__title" data-animate>
-                  If you had one decision to change the school, what would it be?
+              <div className="decision__header" data-animate>
+                <p className="decision__eyebrow">One decision</p>
+                <h2 className="decision__title">
+                  If you could change one thing about school, what would it be?
                 </h2>
+                <p className="decision__subtitle">
+                  Pick a card to see how we’d move it forward — quick and kind.
+                </p>
               </div>
               <div
                 className="decision__choices"
                 role="group"
                 aria-label="One decision game"
+                data-animate
               >
-                {Object.keys(decisionMessages).map((option) => (
+                {decisionOptions.map((option) => (
                   <button
-                    key={option}
-                    className="decision__button"
+                    key={option.id}
+                    className={`decision__button${
+                      selectedDecision === option.id
+                        ? ' decision__button--active'
+                        : ''
+                    }`}
                     type="button"
-                    onClick={() => setSelectedDecision(option)}
+                    onClick={() => setSelectedDecision(option.id)}
                   >
-                    {option}
+                    {option.label}
                   </button>
                 ))}
               </div>
-              <div className="decision__message" aria-live="polite" aria-atomic="true">
-                {message && (
+              <div
+                className="decision__message"
+                aria-live="polite"
+                aria-atomic="true"
+                data-animate
+              >
+                {message ? (
                   <p
                     key={selectedDecision}
                     className="decision__message-text decision__message-text--visible"
                   >
                     {message}
                   </p>
-                )}
-                {!message && (
+                ) : (
                   <p className="decision__message-text">
-                    Tap a choice to see a friendly response.
+                    Tap a choice to get a friendly response.
                   </p>
                 )}
               </div>
             </div>
           </section>
+
           <section className="section section--cta" data-animate-section>
             <div className="cta">
-              <div className="cta__content">
-                <p className="cta__eyebrow" data-animate>
-                  Your voice matters
-                </p>
-                <h2 className="cta__title" data-animate>
-                  Let’s build a school year that feels fair, fun, and focused.
+              <div className="cta__content" data-animate>
+                <p className="cta__eyebrow">Final call</p>
+                <h2 className="cta__title">
+                  Let’s make this year feel calmer, brighter, and ours.
                 </h2>
-                <p className="cta__text" data-animate>
-                  If you believe in respectful leadership and real action, I’d
-                  be honored to earn your support.
+                <p className="cta__text">
+                  If you want a leader who listens, acts, and keeps it honest,
+                  I’d be grateful for your support.
                 </p>
+                <div className="cta__actions" data-animate>
+                  <button
+                    className="cta__button cta__button--primary"
+                    type="button"
+                  >
+                    Vote with confidence
+                  </button>
+                  <a
+                    className="cta__button cta__button--ghost"
+                    href="https://wa.me/96181268506"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </div>
               </div>
-              <div className="cta__actions" data-animate>
-                <button className="cta__button cta__button--primary" type="button">
-                  Vote with confidence
-                </button>
-                <button className="cta__button cta__button--ghost" type="button">
-                  Show your support
-                </button>
+              <div className="cta__media" data-animate>
+                <div className="cta__media-frame">
+                  <img
+                    className="cta__media-image"
+                    src="/poster4Ali.jpg"
+                    alt="Ali campaign poster"
+                  />
+                </div>
+                <p className="cta__contact">Phone: 81 268 506</p>
               </div>
             </div>
           </section>
         </main>
-        <footer className="footer" data-animate-section>
-          <div className="footer__content">
-            <div className="footer__image-frame" data-animate>
-              <img
-                className="footer__image"
-                src="/poster4Ali.jpg"
-                alt="Ali campaign poster"
-              />
-            </div>
-            <div className="footer__text" data-animate>
-              <h2 className="footer__title">Thank you for listening</h2>
-              <p className="footer__message">
-                I’ll keep pushing for student rights, more fun activities, and
-                a school culture that respects every need.
-              </p>
-              <div className="footer__contact">
-                <p className="footer__phone">Phone: 81 268 506</p>
-                <a
-                  className="footer__button"
-                  href="https://wa.me/96181268506"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Chat on WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   )
