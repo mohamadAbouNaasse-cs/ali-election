@@ -39,15 +39,27 @@ function App() {
       <div className="app__frame">
         <header className="section section--hero" data-animate-section>
           <div className="hero">
-            <img
-              className="hero__logo"
-              src="/hekma.jpg"
-              alt="Hekma school logo"
-            />
+            <div className="hero__topbar" data-animate>
+              <div className="hero__identity">
+                <p className="hero__eyebrow">Student Council</p>
+                <h1 className="hero__name">Ali Hani Abou Naasse</h1>
+              </div>
+              <div className="hero__role">
+                <p className="hero__role-title">Grade 10 Representative</p>
+              </div>
+              <img
+                className="hero__logo"
+                src="/hekma.jpg"
+                alt="Hekma school logo"
+              />
+            </div>
             <div className="hero__content">
-              <p className="hero__eyebrow">Student Council</p>
-              <h1 className="hero__title">Student Name</h1>
-              <p className="hero__subtitle">Student Council Candidate</p>
+              <p className="hero__headline">
+                A calm, respectful, and energetic voice for a better school year.
+              </p>
+              <p className="hero__subtitle">
+                I’m here to listen, act, and keep our school community strong.
+              </p>
             </div>
           </div>
         </header>
@@ -71,6 +83,10 @@ function App() {
                 I’m not here to promise huge stuff. I’m here to listen, share
                 your ideas, and make sure student voices actually reach the
                 teachers and administration.
+              </p>
+              <p className="story__paragraph" data-animate>
+                I promise to fight (as always) for your rights, respect your
+                needs, and keep communication honest and clear.
               </p>
               <h2 className="story__title" data-animate>
                 One of You
@@ -125,11 +141,20 @@ function App() {
                 </article>
                 <article className="values__card" data-animate>
                   <span className="values__icon" aria-hidden="true">
-                    📚
+                    🏆
                   </span>
-                  <h3 className="values__label">Academic support</h3>
+                  <h3 className="values__label">Sports &amp; energy</h3>
                   <p className="values__text">
-                    Peer help, study spaces, and extra clarity before quizzes.
+                    More games, tournaments, and fun school sports events.
+                  </p>
+                </article>
+                <article className="values__card" data-animate>
+                  <span className="values__icon" aria-hidden="true">
+                    🤝
+                  </span>
+                  <h3 className="values__label">Respect &amp; support</h3>
+                  <p className="values__text">
+                    A culture that respects needs and keeps every student heard.
                   </p>
                 </article>
               </div>
@@ -145,7 +170,11 @@ function App() {
                   If you had one decision to change the school, what would it be?
                 </h2>
               </div>
-              <div className="decision__choices" role="group" aria-label="One decision game">
+              <div
+                className="decision__choices"
+                role="group"
+                aria-label="One decision game"
+              >
                 {Object.keys(decisionMessages).map((option) => (
                   <button
                     key={option}
@@ -174,7 +203,60 @@ function App() {
               </div>
             </div>
           </section>
+          <section className="section section--cta" data-animate-section>
+            <div className="cta">
+              <div className="cta__content">
+                <p className="cta__eyebrow" data-animate>
+                  Your voice matters
+                </p>
+                <h2 className="cta__title" data-animate>
+                  Let’s build a school year that feels fair, fun, and focused.
+                </h2>
+                <p className="cta__text" data-animate>
+                  If you believe in respectful leadership and real action, I’d
+                  be honored to earn your support.
+                </p>
+              </div>
+              <div className="cta__actions" data-animate>
+                <button className="cta__button cta__button--primary" type="button">
+                  Vote with confidence
+                </button>
+                <button className="cta__button cta__button--ghost" type="button">
+                  Show your support
+                </button>
+              </div>
+            </div>
+          </section>
         </main>
+        <footer className="footer" data-animate-section>
+          <div className="footer__content">
+            <div className="footer__image-frame" data-animate>
+              <img
+                className="footer__image"
+                src="/poster4Ali.jpg"
+                alt="Ali campaign poster"
+              />
+            </div>
+            <div className="footer__text" data-animate>
+              <h2 className="footer__title">Thank you for listening</h2>
+              <p className="footer__message">
+                I’ll keep pushing for student rights, more fun activities, and
+                a school culture that respects every need.
+              </p>
+              <div className="footer__contact">
+                <p className="footer__phone">Phone: 81 268 506</p>
+                <a
+                  className="footer__button"
+                  href="https://wa.me/96181268506"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   )
