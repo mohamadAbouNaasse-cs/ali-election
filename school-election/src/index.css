@@ -523,18 +523,19 @@ body {
 
 /* Language toggle in the topbar */
 
-/* Compact two-sided language switch */
+
+/* Compact three-sided language switch */
 .lang-switch {
   position: relative;
   display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
   align-items: center;
   background: rgba(15, 27, 51, 0.06);
   padding: 6px;
   border-radius: 999px;
   border: 1px solid rgba(231, 238, 252, 0.06);
-  width: 86px;
+  width: 132px;
   height: 36px;
   box-shadow: 0 8px 20px rgba(12, 24, 48, 0.06);
 }
@@ -563,7 +564,7 @@ body {
   z-index: 1;
   left: 6px;
   top: 6px;
-  width: calc(50% - 6px);
+  width: calc(33.333% - 6px);
   height: calc(100% - 12px);
   background: linear-gradient(140deg, #3156a6, #3b6ed4);
   border-radius: 999px;
@@ -572,8 +573,12 @@ body {
   transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.lang-switch__slider--right {
+.lang-switch__slider--center {
   transform: translateX(100%);
+}
+
+.lang-switch__slider--right {
+  transform: translateX(200%);
 }
 
 /* Decision controls */
